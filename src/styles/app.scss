@@ -4,7 +4,7 @@
 
 @import '../../node_modules/@fontsource/roboto/index.css';
 
-s html {
+html {
   -webkit-font-smoothing: antialiased;
 }
 body,
@@ -39,10 +39,7 @@ html {
   --ease-elastic-4: cubic-bezier(0.5, 1.5, 0.75, 1.25);
   --ease-elastic-5: cubic-bezier(0.5, 1.75, 0.75, 1.25);
 }
-
-.dev {
-  outline: 2px solid red;
-}
-.dev-border {
-  border: 3px solid red;
+// Class is used for debugging purposes
+.d {
+  border: 2px solid red;
 }
