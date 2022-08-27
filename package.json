@@ -1,8 +1,16 @@
 {
-  "name": "svelte-tauri",
+  "name": "avtoradio-leacher",
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "repository": {
+    "url": "https://github.com/Fractal-Tess/Avtoradio-Leacher"
+  },
+  "author": {
+    "email": "vgfractal@gmail.com",
+    "name": "Fractal-Tess",
+    "url": "https://github.com/Fractal-Tess"
+  },
   "scripts": {
     "start": "tauri dev",
     "dev": "tauri dev",
