@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ThemeToggleIcon from '$lib/example/header/ThemeToggleIcon.svelte';
+  import ThemeToggleIcon from '$lib/components/ThemeToggleIcon.svelte';
   import { theme } from '$lib/stores/theme';
   import { appWindow } from '@tauri-apps/api/window';
 </script>
