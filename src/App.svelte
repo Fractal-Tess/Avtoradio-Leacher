@@ -1,25 +1,35 @@
 <script lang="ts">
-  import { fade } from 'svelte/transition';
-
   import Header from '$lib/example/header/Header.svelte';
-  import Index from '$lib/Index.svelte';
   import Footer from '$lib/example/footer/Footer.svelte';
+  import Player from '$lib/components/Player.svelte';
 
   import { theme } from '$lib/stores/theme';
+  import SimpleTransition from '$lib/components/SimpleTransition.svelte';
+  import Loading from '$lib/components/Loading.svelte';
+  import { audioStore } from '$lib/stores/audioStore';
 
   $: {
     document.documentElement.setAttribute('data-theme', $theme);
     document.documentElement.classList.value = $theme;
   }
+
+  audioStore.load();
 </script>
 
 {#await theme.load() then}
-  <div
-    class="font-sans bg-base-100 text-base-content h-screen flex flex-col overflow-y-auto overflow-x-hidden"
-  >
+  <div class="font-sans bg-base-100 text-base-content h-screen flex flex-col">
     <Header />
-    <main class="flex-1" in:fade={{ delay: 300, duration: 1000 }}>
-      <Index />
+    <main class="flex-1">
+      <SimpleTransition refreshKey={$audioStore.ready}>
+        {#if $audioStore.ready}
+          <Player />
+        {:else}
+          <Loading
+            spinnerClass={'h-40 w-40'}
+            textClass={'text-3xl font-extrabold mb-12'}
+          />
+        {/if}
+      </SimpleTransition>
     </main>
     <Footer />
   </div>
