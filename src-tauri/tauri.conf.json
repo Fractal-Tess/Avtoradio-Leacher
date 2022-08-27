@@ -56,11 +56,12 @@
     "windows": [
       {
         "title": "Svelte-Tauri Template",
-        "width": 1200,
-        "height": 800,
+        "width": 300,
+        "height": 500,
         "fullscreen": false,
         "transparent": true,
-        "decorations": false
+        "decorations": false,
+        "resizable": false
       }
     ]
   }
