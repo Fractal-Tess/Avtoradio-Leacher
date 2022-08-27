@@ -46,51 +46,42 @@
     transform: translateX(-7px);
   }
 
-  @supports (cx: 1) {
-    :global(.light) svg .moon > circle {
-      transform: translateX(0);
-      cx: 17;
-    }
+  :global(.light) svg .moon > circle {
+    transform: translateX(0);
+    cx: 17;
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    svg .sun {
-      transition: transform var(--transition-duration-long)
-        var(--ease-elastic-3);
-    }
+  svg .sun {
+    transition: transform var(--transition-duration-long) var(--ease-elastic-3);
+  }
 
-    svg .sun-beams {
-      transition: transform var(--transition-duration-long)
-          var(--ease-elastic-4),
-        opacity var(--transition-duration-long) var(--ease-3);
-    }
+  svg .sun-beams {
+    transition: transform var(--transition-duration-long) var(--ease-elastic-4),
+      opacity var(--transition-duration-long) var(--ease-3);
+  }
 
-    svg .moon > circle {
-      transition: transform calc(var(--transition-duration-long) / 2)
-        var(--ease-out-5);
-    }
+  svg .moon > circle {
+    transition: transform calc(var(--transition-duration-long) / 2)
+      var(--ease-out-5);
+  }
 
-    @supports (cx: 1) {
-      svg .moon > circle {
-        transition: cx calc(var(--transition-duration-long) / 2)
-          var(--ease-out-5);
-      }
-    }
+  svg .moon > circle {
+    transition: cx calc(var(--transition-duration-long) / 2) var(--ease-out-5);
+  }
 
-    :global(.light) svg .sun {
-      transform: scale(1.75);
-      transition-timing-function: var(--ease-3);
-      transition-duration: calc(var(--transition-duration-long) / 2);
-    }
+  :global(.light) svg .sun {
+    transform: scale(1.75);
+    transition-timing-function: var(--ease-3);
+    transition-duration: calc(var(--transition-duration-long) / 2);
+  }
 
-    :global(.light) svg .sun-beams {
-      transform: rotateZ(-25deg);
-      transition-duration: calc(var(--transition-duration-long) / 3);
-    }
+  :global(.light) svg .sun-beams {
+    transform: rotateZ(-25deg);
+    transition-duration: calc(var(--transition-duration-long) / 3);
+  }
 
-    :global(.light) svg .moon > circle {
-      transition-delay: calc(var(--transition-duration-long) / 2);
-      transition-duration: var(--transition-duration-long);
-    }
+  :global(.light) svg .moon > circle {
+    transition-delay: calc(var(--transition-duration-long) / 2);
+    transition-duration: var(--transition-duration-long);
   }
 </style>
