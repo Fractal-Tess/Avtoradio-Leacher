@@ -7,7 +7,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "svelte-tauri-template",
+    "productName": "avtoradio-leacher",
     "version": "0.1.0"
   },
   "tauri": {
@@ -47,7 +47,7 @@
       },
       "resources": [],
       "shortDescription": "",
-      "targets": "app",
+      "targets": "all",
       "windows": {
         "certificateThumbprint": null,
         "digestAlgorithm": "sha256",
