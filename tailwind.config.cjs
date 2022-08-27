@@ -32,12 +32,12 @@ const config = {
         },
         dark: {
           ...require('daisyui/src/colors/themes')['[data-theme=dark]'],
-          primary: '#137cb5',
-          secondary: '#e80d52',
-          accent: '#f4cd73',
+          primary: '#1A4964ff',
+          secondary: '#286F91ff',
+          accent: '#58A9C5ff',
           neutral: '#1F1721',
-          'base-100': '#2B3440',
-          info: '#35B0F3',
+          'base-100': '#050D1Cff',
+          info: '#507592ff',
           success: '#1B743C',
           warning: '#F38A12',
           error: '#F2215C'
