@@ -7,6 +7,6 @@ HIGH: FIX THE AWFUL AUDIO-STORE FILE!!!!
 HIGH: Add always on top toggle
 HIGH: Redesign UI - remake theme colors - derive app colors from the currently playing song's cover colors
 HIGH: Make a proper logo
-HIGH: ADD volume control
+HIGH: ADD volume control === DONE
 HIGH: Add an option for the user to link the current track + view all liked tracks (stored on disk - json)
 HIGH: Add audio history

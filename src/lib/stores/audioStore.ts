@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store';
+import { store } from './tauriStore';
 
 // TODO: I KNOW THIS SHOULD BE A CLASS BUT I HATE THEM. (Just make it into a class fractal...)
 // TODO: move this into types
@@ -27,6 +28,7 @@ type AudioStore = {
   streamEndpoint: string;
   ready: boolean;
   audio: HTMLAudioElement;
+  volume: number;
 };
 
 enum BitRate {
@@ -69,7 +71,8 @@ const createAudioStore = () => {
     isPlaying: false,
     streamEndpoint: '',
     ready: false,
-    audio: new Audio()
+    audio: new Audio(),
+    volume: 50
   };
 
   const { subscribe, set, update } = writable(initializationObject);
@@ -91,13 +94,22 @@ const createAudioStore = () => {
 
   return {
     subscribe,
+    set: (audioStore: AudioStore) => {
+      audioStore.audio.volume = audioStore.volume / 100;
+      store.set('volume', audioStore.volume);
+    },
     load: async () => {
-      const streamEndpoint = await getStreamEndpoint(BitRate.HIGH);
+      const [streamEndpoint, volume] = await Promise.all([
+        getStreamEndpoint(BitRate.HIGH),
+        store.get<number>('volume') // This is possibly null
+      ]);
+
       updateCurrent();
       update(audioStore => {
         return {
           ...audioStore,
           ready: true,
+          volume: volume || 50,
           audio: new Audio(streamEndpoint)
         };
       });
@@ -119,12 +131,6 @@ const createAudioStore = () => {
           ...audioStore,
           isPlaying: false
         };
-      });
-    },
-    volume: (vol: number) => {
-      update(audioStore => {
-        audioStore.audio.volume = vol;
-        return audioStore;
       });
     }
   };

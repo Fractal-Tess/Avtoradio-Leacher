@@ -17,6 +17,9 @@
   </button>
 
   <div>
+    <a target="_blank" href="https://github.com/Fractal-Tess/Avtoradio-Leacher">
+      <i class="fa-brands fa-github h-6" />
+    </a>
     <button
       on:click={appWindow.minimize}
       aria-live="polite"

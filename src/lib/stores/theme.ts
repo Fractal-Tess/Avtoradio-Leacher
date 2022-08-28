@@ -1,8 +1,7 @@
-import { Store } from 'tauri-plugin-store-api';
-import type { Theme } from '../../types';
 import { writable } from 'svelte/store';
+import { store } from './tauriStore';
 
-const store = new Store('.settings.dat');
+type Theme = 'dark' | 'light';
 
 const createThemeStore = () => {
   const { subscribe, update, set } = writable('');
