@@ -1,7 +1,7 @@
 {
   "name": "avtoradio-leacher",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.1.1",
   "type": "module",
   "repository": {
     "url": "https://github.com/Fractal-Tess/Avtoradio-Leacher"
