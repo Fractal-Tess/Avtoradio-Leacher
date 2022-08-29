@@ -2,16 +2,14 @@
   import Loading from '$lib/components/Loading.svelte';
   import Controls from '$lib/components/Controls.svelte';
   import { audioStore } from '$lib/stores/audioStore';
-  import ldAFRoze from '$assets/ld.azure-frost.rose.png';
   import SimpleTransition from '$lib/components/SimpleTransition.svelte';
-
-  const defaultImage = ldAFRoze;
+  import logo from '$assets/logo.png';
 </script>
 
 <div class="h-full flex flex-col justify-around items-center">
   <img
     class="rounded-3xl max-h-64"
-    src={$audioStore.current.imageUrl || defaultImage}
+    src={$audioStore.current.imageUrl || logo}
     alt="You should never be able to see this"
   />
   <div class="text-center px-8">
