@@ -2,7 +2,7 @@
 
 <div align="center">
 <br />
-<img src="https://github.com/Fractal-Tess/Avtoradio-Leacher/blob/main/app.jpg" height="400" style="border-radius:2rem"/>
+<img src="https://raw.githubusercontent.com/Fractal-Tess/Avtoradio-Leacher/main/src/assets/app.jpg" height="400" style="border-radius:2rem"/>
 </div>
 <br />
 <br />
